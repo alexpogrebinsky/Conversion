@@ -187,7 +187,9 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Convert.cshtml" />
+    <Content Include="Views\Home\ConvertGallons.cshtml" />
+    <Content Include="Views\Home\ConvertCF.cshtml" />
+    <Content Include="Views\Home\ConvertKP.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

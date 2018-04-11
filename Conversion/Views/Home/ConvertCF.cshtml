@@ -6,25 +6,25 @@
 
 
 @{
-    ViewBag.Title = "Convert";
+    ViewBag.Title = "ConvertCF";
 }
-<h2>Convert</h2>
+<h2>Conversion of Celsius and Fehrenheit</h2>
 
-@using (Html.BeginForm("convert", "Home", FormMethod.Post))
+@using (Html.BeginForm("convertcf", "Home", FormMethod.Post))
 {
     <div>
-        Convert Gallons to Liters
+  
     </div>
     <div>
-        @Html.LabelFor(x => x.Input, "Liters")
+        @Html.LabelFor(x => x.Input, "Temp:")
         @Html.TextBoxFor(x => x.Input)
     </div>
     <div>
         @Html.LabelFor(x => x.Option, "Convert to ")
         @Html.DropDownListFor(x => x.Option, new List<SelectListItem>
 {
- new SelectListItem {Text = "Li", Value = "1"},
- new SelectListItem {Text = "Ga", Value = "2"}
+new SelectListItem {Text = "Fahrenheit", Value = "1"},
+new SelectListItem {Text = "Celsius", Value = "2"}
 })
     </div>
     <div>
@@ -35,3 +35,8 @@
 {
     <p>@Model.OptionName : @Model.Input = @Model.Result</p>
 }
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+

@@ -1,24 +1,13 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Conversion Station";
 }
 
 @model Conversion.GallonsLiters
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+    <h1>Conversion Station</h1>
+    <p class="lead">Convert units of measurments.</p>
     <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
 </div>
 
-@using (Html.BeginForm("Index", "Home", FormMethod.Get))
-{<center>
-        <p style="font-size: 15px; letter-spacing: 1.2px;">
-            Convert to Liters @Html.TextBoxFor(model => model.Get)
-            <input type="submit" value="Convert" /> <br />
-
-        </p>
-    </center>
-
-}
-
-@Html.DisplayNameFor(model => model.Get)
+<li>@Html.ActionLink("Contact", "Contact", "Home")</li>

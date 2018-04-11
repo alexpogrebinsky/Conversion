@@ -1,0 +1,38 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model Conversion.Models.ViewModel
+
+
+@{
+    ViewBag.Title = "ConvertKP";
+}
+<h2>Conversion of Celsius and Fehrenheit</h2>
+
+@using (Html.BeginForm("convertkp", "Home", FormMethod.Post))
+{
+    <div>
+        Convert Killograms and Pounds
+    </div>
+    <div>
+        @Html.LabelFor(x => x.Input, "Weight:")
+        @Html.TextBoxFor(x => x.Input)
+    </div>
+    <div>
+        @Html.LabelFor(x => x.Option, "Convert to ")
+        @Html.DropDownListFor(x => x.Option, new List<SelectListItem>
+{
+new SelectListItem {Text = "Kilograms", Value = "1"},
+new SelectListItem {Text = "Pounds", Value = "2"}
+})
+    </div>
+    <div>
+        <button type="submit">Convert It!</button>
+    </div>
+}
+@if (Model.ShowResult)
+{
+    <p>@Model.OptionName : @Model.Input = @Model.Result</p>
+}
+

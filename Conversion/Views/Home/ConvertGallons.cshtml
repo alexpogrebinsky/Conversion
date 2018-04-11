@@ -1,0 +1,37 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model Conversion.Models.ViewModel
+
+
+@{
+    ViewBag.Title = "ConvertGallons";
+}
+<h2>Conversion of Gallons and Liters</h2>
+
+@using (Html.BeginForm("convertgallons", "Home", FormMethod.Post))
+{
+    <div>
+        Convert Gallons to Liters
+    </div>
+    <div>
+        @Html.LabelFor(x => x.Input, "Unit:")
+        @Html.TextBoxFor(x => x.Input)
+    </div>
+    <div>
+        @Html.LabelFor(x => x.Option, "Convert to ")
+        @Html.DropDownListFor(x => x.Option, new List<SelectListItem>
+{
+ new SelectListItem {Text = "Li", Value = "1"},
+ new SelectListItem {Text = "Ga", Value = "2"}
+})
+    </div>
+    <div>
+        <button type="submit">Convert It!</button>
+    </div>
+}
+@if (Model.ShowResult)
+{
+    <p>@Model.OptionName : @Model.Input = @Model.Result</p>
+}

@@ -11,10 +11,9 @@ namespace Conversion.Controllers
     public class HomeController : Controller
     {
        
-
-        public ActionResult Convert(ViewModel vm)
+           public ActionResult ConvertGallons(ViewModel vm)
         {
-            if (vm == null) { return View("convert", new ViewModel { ShowResult = false }); }
+            if (vm == null) { return View("convertgallons", new ViewModel { ShowResult = false }); }
 
             if (vm.Option == 1)
             {
@@ -31,10 +30,53 @@ namespace Conversion.Controllers
             ////not needed, just for an example
             //ViewData.Add("glosrob-example", "A value goes here!");
 
-            return View("convert", vm);
+            return View("convertgallons", vm);
         }
 
-     
+        public ActionResult ConvertCF(ViewModel vm)
+        {
+            if (vm == null) { return View("convertcf", new ViewModel { ShowResult = false }); }
+
+            if (vm.Option == 1)
+            {
+                vm.Result = Methods.CelsiusToFahrenheit(vm.Input);
+                vm.OptionName = "Celsius To Fahrenheit";
+            }
+            else
+            {
+                vm.Result = Methods.FahrenheitToCelsius(vm.Input);
+                vm.OptionName = "Fahrenheit to Celsius";
+            }
+            vm.ShowResult = true;
+
+            ////not needed, just for an example
+            //ViewData.Add("glosrob-example", "A value goes here!");
+
+            return View("convertcf", vm);
+        }
+
+        public ActionResult ConvertKP(ViewModel vm)
+        {
+            if (vm == null) { return View("convertkp", new ViewModel { ShowResult = false }); }
+
+            if (vm.Option == 1)
+            {
+                vm.Result = Methods.PoundstoKilos(vm.Input);
+                vm.OptionName = "Pounds to Kilos";
+            }
+            else
+            {
+                vm.Result = Methods.KilostoPounds(vm.Input);
+                vm.OptionName = "Kilograms to Pounds";
+            }
+            vm.ShowResult = true;
+
+            ////not needed, just for an example
+            //ViewData.Add("glosrob-example", "A value goes here!");
+
+            return View("convertkp", vm);
+        }
+
 
         public ActionResult Index()
         {
