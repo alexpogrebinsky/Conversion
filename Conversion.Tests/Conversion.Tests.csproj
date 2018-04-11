@@ -99,9 +99,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Conversion\Conversion.csproj">
+    <ProjectReference Include="..\Conversion\Conversion.Web.csproj">
       <Project>{5292C93B-97C8-4EF2-BF0F-6882C378766D}</Project>
-      <Name>Conversion</Name>
+      <Name>Conversion.Web</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
